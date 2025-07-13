@@ -1,0 +1,58 @@
+const experiences = [
+  {
+    company: "Hua Nan Securities",
+    title: "Product & Project Manager",
+    period: "May 2024 – Present",
+    description: "Led the development of the sub-brokerage app \"e指沖,\" managing the entire product cycle: from requirement gathering to go-live and audit preparation. Authored investment reports on U.S. ETFs, stocks, and bonds for institutional use."
+  },
+  {
+    company: "Uber Eats",
+    title: "PayFac AML Intern",
+    period: "Jul – Aug 2022",
+    description: "Executed third-party payment (PayFac) verification for 3,000+ merchants, achieving the highest completion rate (90%). Managed cross-team coordination and CRM systems (Salesforce, SAP) for 500+ merchant profiles."
+  },
+  {
+    company: "Mitte 3C",
+    title: "Marketing Assistant",
+    period: "Feb – Oct 2019",
+    description: "Doubled social growth across FB, IG, and YouTube by running themed campaigns and events. Created a viral YouTube mini-drama series with 200K+ views and 1M+ revenue in event-related sales."
+  }
+];
+
+const Experience = () => {
+  return (
+    <section id="experience" className="py-20 px-6 bg-muted/30">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="font-display text-4xl font-bold text-primary-text mb-12 text-center">
+          Experience
+        </h2>
+        
+        <div className="space-y-12">
+          {experiences.map((exp, index) => (
+            <article key={index} className="border-l-2 border-divider pl-6 relative">
+              <div className="absolute w-3 h-3 bg-accent rounded-full -left-2 top-2"></div>
+              
+              <div className="mb-4">
+                <h3 className="font-display text-xl font-semibold text-primary-text mb-1">
+                  {exp.company}
+                  <span className="font-inter text-base font-normal text-muted-foreground ml-2">
+                    — {exp.title}
+                  </span>
+                </h3>
+                <time className="text-sm text-muted-foreground font-medium">
+                  {exp.period}
+                </time>
+              </div>
+              
+              <p className="prose-editorial text-base leading-relaxed">
+                {exp.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;

@@ -18,12 +18,19 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'display': ['Playfair Display', 'Georgia', 'serif'],
+				'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				'primary-text': 'hsl(var(--primary-text))',
+				'hover-yellow': 'hsl(var(--hover-yellow))',
+				'divider': 'hsl(var(--divider))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
