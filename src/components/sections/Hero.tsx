@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -12,9 +13,14 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center px-6">
       <div className="max-w-2xl mx-auto text-center">
         <div className="mb-8">
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-muted border-2 border-divider flex items-center justify-center">
-            <span className="text-muted-foreground text-sm">Photo</span>
-          </div>
+          <Avatar className="w-32 h-32 mx-auto mb-6 border-2 border-divider">
+            <AvatarImage 
+              src="/lovable-uploads/357f27e6-912e-422f-88b2-d74bd84a7f47.png" 
+              alt="Yu-Ting (Raina) Tsai"
+              className="object-cover"
+            />
+            <AvatarFallback className="text-muted-foreground text-sm">YT</AvatarFallback>
+          </Avatar>
         </div>
         
         <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-text mb-6 leading-tight">
