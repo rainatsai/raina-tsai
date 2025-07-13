@@ -11,7 +11,13 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6">
       <div className="max-w-2xl mx-auto text-center">
-        <h1 className="font-display text-5xl md:text-6xl font-bold text-primary-text mb-6 leading-tight">
+        <div className="mb-8">
+          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-muted border-2 border-divider flex items-center justify-center">
+            <span className="text-muted-foreground text-sm">Photo</span>
+          </div>
+        </div>
+        
+        <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-text mb-6 leading-tight">
           Yu-Ting (Raina) Tsai
         </h1>
         
@@ -37,6 +43,13 @@ const Hero = () => {
             className="border-divider text-primary-text hover:bg-muted transition-all duration-300 px-8 py-3 text-base font-medium"
           >
             ↓ Learn More
+          </Button>
+          
+          <Button 
+            onClick={() => scrollToSection('contact')}
+            className="bg-accent hover:bg-hover-yellow hover:text-primary-text transition-all duration-300 px-8 py-3 text-base font-medium"
+          >
+            Contact Me
           </Button>
         </div>
       </div>

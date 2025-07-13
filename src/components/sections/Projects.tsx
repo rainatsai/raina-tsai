@@ -21,7 +21,7 @@ const Projects = () => {
     <section id="projects" className="py-20 px-6">
       <div className="max-w-2xl mx-auto">
         <h2 className="font-display text-4xl font-bold text-primary-text mb-12 text-center">
-          Projects & Brands I've Built
+          Company & Brands I've Built
         </h2>
         
         <div className="space-y-10">
@@ -33,9 +33,20 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="font-display text-xl font-semibold text-primary-text mb-2 group-hover:text-accent transition-colors duration-200">
-                    {project.title}
-                  </h3>
+                  {project.title === "Lovesick Rehab" ? (
+                    <a 
+                      href="https://linktr.ee/lovesick.rehab?utm_source=linktree_profile_share&ltsid=6f9e5e3a-11e5-4013-9d1c-def30e459d30"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-display text-xl font-semibold text-primary-text mb-2 group-hover:text-accent transition-colors duration-200 hover:text-accent"
+                    >
+                      {project.title}
+                    </a>
+                  ) : (
+                    <h3 className="font-display text-xl font-semibold text-primary-text mb-2 group-hover:text-accent transition-colors duration-200">
+                      {project.title}
+                    </h3>
+                  )}
                   
                   <p className="text-base text-muted-foreground mb-3 font-medium">
                     {project.subtitle}

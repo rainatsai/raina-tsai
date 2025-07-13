@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   const contacts = [
@@ -12,12 +12,6 @@ const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn",
       value: "LinkedIn Profile",
-      href: "#"
-    },
-    {
-      icon: Instagram,
-      label: "Instagram",
-      value: "Instagram",
       href: "#"
     }
   ];
@@ -49,11 +43,6 @@ const Contact = () => {
           })}
         </div>
         
-        <div className="mt-16 pt-8 border-t border-divider">
-          <p className="text-sm text-muted-foreground">
-            Last updated: December 2024
-          </p>
-        </div>
       </div>
     </section>
   );
