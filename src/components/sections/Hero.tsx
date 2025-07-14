@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="mb-8">
           <Avatar className="w-32 h-32 mx-auto mb-6 border-2 border-divider">
             <AvatarImage 
-              src="/lovable-uploads/f1c3d46d-98e8-4342-b602-567e606efd4f.png"
+              src="/lovable-uploads/661b9825-6698-4165-9ebe-1d216ae835b0.png"
               alt="Yu-Ting (Raina) Tsai"
               className="object-cover"
             />

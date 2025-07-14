@@ -1,26 +1,40 @@
-import { Bike, Building, Smartphone } from 'lucide-react';
+import { Heart, Users, Smartphone } from 'lucide-react';
 
 const experiences = [
   {
-    company: "Hua Nan Securities",
-    title: "Product & Project Manager",
-    period: "May 2024 – Present",
-    description: "Led the development of the sub-brokerage app \"e指沖,\" managing the entire product cycle: from requirement gathering to go-live and audit preparation. Authored investment reports on U.S. ETFs, stocks, and bonds for institutional use.",
+    company: "華南永昌證券 (Hua Nan Securities)",
+    title: "Project and Product Manager",
+    period: "May 2024 - present",
+    description: "Conducted in-depth research and authored reports on U.S. stocks, ETFs, and bonds, providing strategic market insights for HNCB and institutions. Managed product development for the in-house 'e指沖' sub-brokerage app, overseeing end-to-end project management including requirements analysis, system planning, testing, and regulatory compliance.",
     icon: "hua-nan"
   },
   {
     company: "Uber Eats",
-    title: "PayFac AML Intern",
-    period: "Jul – Aug 2022",
-    description: "Executed third-party payment (PayFac) verification for 3,000+ merchants, achieving the highest completion rate (90%). Managed cross-team coordination and CRM systems (Salesforce, SAP) for 500+ merchant profiles.",
+    title: "PayFac AML Intern", 
+    period: "Jul 2022 - Aug 2022",
+    description: "Promoted PayFac (third-party payment) verification project by reaching out to 3,000+ restaurants, achieving the highest completion rate of 90%. Maintained an 80% retention rate by collaborating with cross-functional teams and utilized CRM systems (G-Suite, Salesforce, SAP) to handle 500+ restaurant information.",
     icon: "uber-eats"
   },
   {
     company: "Mitte 3C",
     title: "Marketing Assistant",
-    period: "Feb – Oct 2019",
-    description: "Doubled social growth across FB, IG, and YouTube by running themed campaigns and events. Created a viral YouTube mini-drama series with 200K+ views and 1M+ revenue in event-related sales.",
+    period: "Feb 2019 - Oct 2019", 
+    description: "Increased target audience growth rate by nearly 100% by managing Facebook, Instagram, and YouTube channels. Accomplished one million turnovers by hosting 4+ marketing events from conception to execution. Achieved highest CTR and 200k+ views through innovative YouTube soap opera series.",
     icon: "smartphone"
+  },
+  {
+    company: "Lovesick Rehab",
+    title: "Co-founder",
+    period: "Apr 2020 - present",
+    description: "Established and operated a Facebook group of over 100,000 people, fan account of 50,000, and Instagram of 20,000+ followers with 2% monthly growth. Cooperated with Internet celebrities to increase exposure and established a fintech company focused on AI solutions for financial institutions.",
+    icon: "heart"
+  },
+  {
+    company: "The Mingle Studio", 
+    title: "Co-founder",
+    period: "Sept 2021 - present",
+    description: "Founded a community to guide fresh graduates on career planning and studying abroad. Designed 4 events with 20+ speakers, attracting 300+ participants. Coordinated with Fu Jen Catholic University and negotiated with 5+ vendors, reducing total costs by 20%.",
+    icon: "users"
   }
 ];
 
@@ -43,8 +57,16 @@ const Experience = () => {
                     className="w-5 h-5 object-contain"
                   />
                 )}
-                {exp.icon === "uber-eats" && <Bike className="w-4 h-4 text-accent" />}
+                {exp.icon === "uber-eats" && (
+                  <img 
+                    src="/lovable-uploads/uber-eats-logo.png" 
+                    alt="Uber Eats" 
+                    className="w-5 h-5 object-contain"
+                  />
+                )}
                 {exp.icon === "smartphone" && <Smartphone className="w-4 h-4 text-accent" />}
+                {exp.icon === "heart" && <Heart className="w-4 h-4 text-accent" />}
+                {exp.icon === "users" && <Users className="w-4 h-4 text-accent" />}
               </div>
               
               <div className="mb-4">
