@@ -8,19 +8,15 @@ const About = () => {
         
         <div className="prose-editorial space-y-6">
           <p>
-            I'm Raina, a bilingual product manager with a background in finance and English literature. 
-            I turn complexity into clarity — whether I'm writing market insights, building digital products, 
-            or creating communities from scratch.
+            I'm Raina, a bilingual product manager with a background in finance and English literature.
           </p>
           
           <p>
-            I thrive at the intersection of data, storytelling, and user empathy. Based in Taipei, 
-            I've worked in fintech, brand marketing, and startup development. I co-founded two ventures 
-            and currently manage product strategy at Hua Nan Securities.
+            At Hua Nan Securities, I lead the development of digital investment tools like the "e指沖" sub-brokerage trading app and and deliver strategic insights on U.S. stocks, ETFs, and bonds for institutional clients.
           </p>
           
           <p>
-            When I'm not working, you'll find me drawing, baking, or weightlifting — or sometimes all three.
+            I enjoy working where data, design, and strategy meet. Outside of work, you'll find me drawing or lifting weights.
           </p>
         </div>
       </div>

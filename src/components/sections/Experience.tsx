@@ -53,7 +53,7 @@ const Experience = () => {
                 )}
                 {exp.icon === "uber-eats" && (
                   <img 
-                    src="/lovable-uploads/uber-eats-logo.png" 
+                    src="/lovable-uploads/ea7ca73e-3988-4dc8-ae63-ade9d9d37f39.png" 
                     alt="Uber Eats" 
                     className="w-5 h-5 object-contain"
                   />
