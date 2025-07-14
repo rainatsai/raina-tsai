@@ -1,4 +1,4 @@
-import { Heart, Users, Smartphone } from 'lucide-react';
+import { Smartphone } from 'lucide-react';
 
 const experiences = [
   {
@@ -21,34 +21,28 @@ const experiences = [
     period: "Feb 2019 - Oct 2019", 
     description: "Increased target audience growth rate by nearly 100% by managing Facebook, Instagram, and YouTube channels. Accomplished one million turnovers by hosting 4+ marketing events from conception to execution. Achieved highest CTR and 200k+ views through innovative YouTube soap opera series.",
     icon: "smartphone"
-  },
-  {
-    company: "Lovesick Rehab",
-    title: "Co-founder",
-    period: "Apr 2020 - present",
-    description: "Established and operated a Facebook group of over 100,000 people, fan account of 50,000, and Instagram of 20,000+ followers with 2% monthly growth. Cooperated with Internet celebrities to increase exposure and established a fintech company focused on AI solutions for financial institutions.",
-    icon: "heart"
-  },
-  {
-    company: "The Mingle Studio", 
-    title: "Co-founder",
-    period: "Sept 2021 - present",
-    description: "Founded a community to guide fresh graduates on career planning and studying abroad. Designed 4 events with 20+ speakers, attracting 300+ participants. Coordinated with Fu Jen Catholic University and negotiated with 5+ vendors, reducing total costs by 20%.",
-    icon: "users"
   }
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-6 bg-muted/30">
-      <div className="max-w-2xl mx-auto">
-        <h2 className="font-display text-4xl font-bold text-primary-text mb-12 text-center">
-          Experience
+    <section id="experience" className="py-20 px-6 bg-muted/30 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-20 h-20 border border-primary rounded-full animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 border border-accent rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 border border-primary rounded-full animate-pulse delay-2000"></div>
+        <div className="absolute bottom-40 right-1/3 w-24 h-24 border border-accent rounded-full animate-pulse delay-500"></div>
+      </div>
+      
+      <div className="max-w-2xl mx-auto relative z-10">
+        <h2 className="font-display text-4xl font-bold text-primary-text mb-12 text-center animate-fade-in">
+          Work Experience
         </h2>
         
         <div className="space-y-12">
           {experiences.map((exp, index) => (
-            <article key={index} className="border-l-2 border-divider pl-6 relative">
+            <article key={index} className="border-l-2 border-divider pl-6 relative hover-scale animate-fade-in" style={{animationDelay: `${index * 200}ms`}}>
               <div className="absolute w-8 h-8 bg-background border-2 border-divider rounded-full -left-5 top-1 flex items-center justify-center">
                 {exp.icon === "hua-nan" && (
                   <img 
@@ -65,8 +59,6 @@ const Experience = () => {
                   />
                 )}
                 {exp.icon === "smartphone" && <Smartphone className="w-4 h-4 text-accent" />}
-                {exp.icon === "heart" && <Heart className="w-4 h-4 text-accent" />}
-                {exp.icon === "users" && <Users className="w-4 h-4 text-accent" />}
               </div>
               
               <div className="mb-4">
