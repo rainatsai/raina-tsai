@@ -6,13 +6,14 @@ const Skills = () => {
   ];
 
   const tools = [
-    "Excel", "PowerPoint", "Salesforce", "SAP", "G-Suite", "Photoshop"
+    "Excel", "PowerPoint", "Salesforce", "SAP", "G-Suite", "Photoshop", "Power BI", "CRM"
   ];
 
   const certifications = [
     "Google Ads Display",
     "Google Digital Marketing", 
-    "Google Analytics (Power User)"
+    "Google Analytics (Power User)",
+    "Qualification Exam for Securities Specialist"
   ];
 
   return (

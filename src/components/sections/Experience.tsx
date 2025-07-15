@@ -2,7 +2,7 @@ import { Smartphone } from 'lucide-react';
 
 const experiences = [
   {
-    company: "華南永昌證券 (Hua Nan Securities)",
+    company: "Hua Nan Securities (華南永昌證券)",
     title: "Project and Product Manager",
     period: "May 2024 - present",
     description: "• Conducted in-depth research and authored reports on U.S. stocks, ETFs, and bonds, providing strategic market insights and investment outlooks for HNCB and other institutions • Managed product development for the in-house 'e指沖' sub-brokerage app, overseeing end-to-end project management to enhance user experience and expand product offerings • Performed requirements analysis, system planning, specification drafting and confirmation, test case creation, functional testing, test report writing, go-live validation, preparation of go-live documentation and training slides, branch training, and acted as the contact point for regulatory inspections and audits",
