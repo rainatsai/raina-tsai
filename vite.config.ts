@@ -2,10 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/raina-tsai/', // raina/
+  base: '/raina-tsai/',
   plugins: [react()],
 })
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
