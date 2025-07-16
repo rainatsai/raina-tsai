@@ -12,7 +12,7 @@ const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn",
       value: "LinkedIn Profile",
-      href: "https://www.linkedin.com/in/yu-ting-tsai-172494231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+      href: "http://linkedin.com/in/yu-ting-tsai-172494231"
     }
   ];
 

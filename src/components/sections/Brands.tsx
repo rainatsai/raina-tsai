@@ -69,7 +69,7 @@ const Brands = () => {
                 </div>
 
                 <div className="mb-6">
-                  <h3 className="font-display text-2xl font-bold text-primary-text mb-2">
+                  <h3 className="font-display text-2xl font-bold text-primary-text mb-2 whitespace-nowrap">
                     {brand.name}
                   </h3>
                   <div className="mb-3">

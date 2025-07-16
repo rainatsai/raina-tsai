@@ -19,14 +19,6 @@ const experiences = [
     icon: "uber-eats"
   },
   {
-    company: "Eastern Union Future",
-    title: "Co-founder & Product Manager",
-    period: "Feb 2020 - Aug 2021", 
-    description: "Directed product strategy, user experience, and data visualization, positioning the platform as a 'Bloomberg for retail.' Successfully helped the company attract over NT$10 million in early-stage funding from angel investors and strategic partners.",
-    hashtags: ["ProductStrategy", "DataVisualization", "Fundraising"],
-    icon: "eastern-union"
-  },
-  {
     company: "Mitte 3C",
     title: "Marketing Assistant",
     period: "Feb 2019 - Oct 2019", 
@@ -75,11 +67,6 @@ const Experience = () => {
                     className="w-8 h-8 object-cover"
                   />
                 )}
-                {exp.icon === "eastern-union" && (
-                  <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                    <span className="text-xs font-bold text-white">EU</span>
-                  </div>
-                )}
                 {exp.icon === "mitte" && (
                   <img 
                     src="/lovable-uploads/0d94bb8c-5159-45d0-81a2-b34889d3b1a0.png" 
@@ -92,14 +79,15 @@ const Experience = () => {
               <div className="mb-4">
                 <h3 className="font-display text-xl font-semibold text-primary-text mb-1">
                   {exp.company}
-                  <span className="font-inter text-base font-normal text-muted-foreground ml-2">
+                  <br />
+                  <span className="font-inter text-base font-normal text-muted-foreground">
                     — {exp.title}
+                    {exp.department && (
+                      <span className="font-inter text-sm font-normal text-muted-foreground ml-2">
+                        ({exp.department})
+                      </span>
+                    )}
                   </span>
-                  {exp.department && (
-                    <span className="font-inter text-sm font-normal text-muted-foreground ml-2">
-                      ({exp.department})
-                    </span>
-                  )}
                 </h3>
                 <time className="text-sm text-muted-foreground font-medium mb-2 block">
                   {exp.period}
