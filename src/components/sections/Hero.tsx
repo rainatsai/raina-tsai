@@ -44,7 +44,7 @@ const Hero = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{animationDelay: '800ms'}}>
           <Button 
-            onClick={() => scrollToSection('brands')}
+            onClick={() => scrollToSection('experience')}
             className="bg-accent hover:bg-hover-yellow hover:text-primary-text transition-all duration-300 px-8 py-3 text-base font-medium"
           >
             → View Work

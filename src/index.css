@@ -9,9 +9,9 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Core Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
-    --primary-text: 0 0% 10%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 90%;
+    --primary-text: 0 0% 90%;
     --accent-blue: 220 75% 60%;
     --hover-yellow: 45 95% 50%;
     --divider: 0 0% 92%;

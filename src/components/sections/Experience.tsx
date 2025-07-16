@@ -4,8 +4,10 @@ const experiences = [
   {
     company: "Hua Nan Securities (華南永昌證券)",
     title: "Project and Product Manager",
+    department: "Global Investment",
     period: "May 2024 - present",
     description: "• Conducted in-depth research and authored reports on U.S. stocks, ETFs, and bonds, providing strategic market insights and investment outlooks for HNCB and other institutions • Managed product development for the in-house 'e指沖' sub-brokerage app, overseeing end-to-end project management to enhance user experience and expand product offerings • Performed requirements analysis, system planning, specification drafting and confirmation, test case creation, functional testing, test report writing, go-live validation, preparation of go-live documentation and training slides, branch training, and acted as the contact point for regulatory inspections and audits",
+    hashtags: "#FintechProduct #CapitalMarkets #FullCycleDevelopment",
     icon: "hua-nan"
   },
   {
@@ -13,6 +15,7 @@ const experiences = [
     title: "PayFac AML Intern", 
     period: "Jul 2022 - Aug 2022",
     description: "• Promoted PayFac (third-party payment) verification project by reaching out to 3,000+ restaurants and stores, and achieved the highest completion rate of 90% • Maintain an 80% retention rate by collaborating with cross-function colleagues in organizing customer lists and reports, classifying customer lists, and confirming the restaurant remittance, billing, and other matters • Utilized internal customer relationship management systems (CRM) such as G-Suite, Salesforce, and SAP to handle 500+ restaurant information",
+    hashtags: "#ComplianceOps #CRMExperience #OperationalExcellence",
     icon: "uber-eats"
   },
   {
@@ -20,6 +23,7 @@ const experiences = [
     title: "Marketing Assistant",
     period: "Feb 2019 - Oct 2019", 
     description: "• Increased the average growth rate of the target audience by nearly 100% by identifying customer preferences and managing the Facebook fan page, Instagram account, and YouTube • Accomplished a record of one million turnovers by hosting 4+ marketing events including Halloween and Mother's Day from conception to execution and developing creative copywriting • Achieved the highest click-through rate (CTR) and 200k+ total views by creating an innovative series of YouTube videos to promote products through the angle of soap operas",
+    hashtags: "#ContentMarketing #GrowthCampaigns #EventExecution",
     icon: "smartphone"
   }
 ];
@@ -33,7 +37,7 @@ const Experience = () => {
       </div>
       
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-30">
         <div className="absolute top-10 left-10 w-20 h-20 border border-primary rounded-full animate-pulse"></div>
         <div className="absolute top-40 right-20 w-16 h-16 border border-accent rounded-full animate-pulse delay-1000"></div>
         <div className="absolute bottom-20 left-1/4 w-12 h-12 border border-primary rounded-full animate-pulse delay-2000"></div>
@@ -63,7 +67,13 @@ const Experience = () => {
                     className="w-5 h-5 object-contain"
                   />
                 )}
-                {exp.icon === "smartphone" && <Smartphone className="w-4 h-4 text-accent" />}
+                {exp.icon === "smartphone" && (
+                  <img 
+                    src="/lovable-uploads/0d94bb8c-5159-45d0-81a2-b34889d3b1a0.png" 
+                    alt="Mitte 3C" 
+                    className="w-5 h-5 object-contain"
+                  />
+                )}
               </div>
               
               <div className="mb-4">
@@ -72,19 +82,28 @@ const Experience = () => {
                   <span className="font-inter text-base font-normal text-muted-foreground ml-2">
                     — {exp.title}
                   </span>
+                  {exp.department && (
+                    <span className="font-inter text-sm font-normal text-muted-foreground ml-2">
+                      ({exp.department})
+                    </span>
+                  )}
                 </h3>
                 <time className="text-sm text-muted-foreground font-medium">
                   {exp.period}
                 </time>
               </div>
               
-              <ul className="prose-editorial text-base leading-relaxed space-y-2 list-disc list-inside">
+              <ul className="prose-editorial text-base leading-relaxed space-y-2 list-disc list-inside mb-4">
                 {exp.description.split('•').filter(point => point.trim()).map((point, idx) => (
                   <li key={idx} className="text-muted-foreground">
                     {point.trim()}
                   </li>
                 ))}
               </ul>
+              
+              <div className="text-sm text-accent font-medium">
+                {exp.hashtags}
+              </div>
             </article>
           ))}
         </div>

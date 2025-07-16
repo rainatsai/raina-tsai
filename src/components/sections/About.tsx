@@ -8,19 +8,25 @@ const About = () => {
         
         <div className="prose-editorial space-y-6">
           <p>
-            I'm Raina, a bilingual product manager with degrees in Finance and English Literature.
+            Hi, I'm Raina, a bilingual product manager with degrees in Finance and English Literature.
           </p>
           
           <p>
-            At Hua Nan Securities, I lead the development of digital investment tools and support institutional strategy through market insights on U.S. stocks, ETFs, and bonds.
+            Currently at Hua Nan Securities, I lead the development of a sub-brokerage app and produce investment insights on U.S. equities, ETFs, and bonds.
           </p>
           
           <p>
-            Previously at Uber Eats, I completed 3,000+ merchant verifications with a 90% success rate. I've also co-founded two ventures: a 100K-member lifestyle brand and a career community for young professionals.
+            My past work includes:
           </p>
           
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+            <li>Verifying 3,000+ merchants at Uber Eats, achieving a 90% success rate</li>
+            <li>Co-founding a 100K-member lifestyle brand</li>
+            <li>Running career events for 300+ students at The Mingle Studio</li>
+          </ul>
+          
           <p>
-            I work at the intersection of finance, product, and community. Recharge through drawing, baking, and weightlifting.
+            I work where finance meets creativity and recharge through drawing, baking, and weightlifting.
           </p>
         </div>
       </div>
