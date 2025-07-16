@@ -1,4 +1,4 @@
-import { Smartphone } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const experiences = [
   {
@@ -7,7 +7,7 @@ const experiences = [
     department: "Global Investment",
     period: "May 2024 - present",
     description: "• Conducted in-depth research and authored reports on U.S. stocks, ETFs, and bonds, providing strategic market insights and investment outlooks for HNCB and other institutions • Managed product development for the in-house 'e指沖' sub-brokerage app, overseeing end-to-end project management to enhance user experience and expand product offerings • Performed requirements analysis, system planning, specification drafting and confirmation, test case creation, functional testing, test report writing, go-live validation, preparation of go-live documentation and training slides, branch training, and acted as the contact point for regulatory inspections and audits",
-    hashtags: "#FintechProduct #CapitalMarkets #FullCycleDevelopment",
+    hashtags: ["FintechProduct", "CapitalMarkets", "FullCycleDevelopment"],
     icon: "hua-nan"
   },
   {
@@ -15,16 +15,24 @@ const experiences = [
     title: "PayFac AML Intern", 
     period: "Jul 2022 - Aug 2022",
     description: "• Promoted PayFac (third-party payment) verification project by reaching out to 3,000+ restaurants and stores, and achieved the highest completion rate of 90% • Maintain an 80% retention rate by collaborating with cross-function colleagues in organizing customer lists and reports, classifying customer lists, and confirming the restaurant remittance, billing, and other matters • Utilized internal customer relationship management systems (CRM) such as G-Suite, Salesforce, and SAP to handle 500+ restaurant information",
-    hashtags: "#ComplianceOps #CRMExperience #OperationalExcellence",
+    hashtags: ["ComplianceOps", "CRMExperience", "OperationalExcellence"],
     icon: "uber-eats"
+  },
+  {
+    company: "Eastern Union Future",
+    title: "Co-founder & Product Manager",
+    period: "Feb 2020 - Aug 2021", 
+    description: "Directed product strategy, user experience, and data visualization, positioning the platform as a 'Bloomberg for retail.' Successfully helped the company attract over NT$10 million in early-stage funding from angel investors and strategic partners.",
+    hashtags: ["ProductStrategy", "DataVisualization", "Fundraising"],
+    icon: "eastern-union"
   },
   {
     company: "Mitte 3C",
     title: "Marketing Assistant",
     period: "Feb 2019 - Oct 2019", 
     description: "• Increased the average growth rate of the target audience by nearly 100% by identifying customer preferences and managing the Facebook fan page, Instagram account, and YouTube • Accomplished a record of one million turnovers by hosting 4+ marketing events including Halloween and Mother's Day from conception to execution and developing creative copywriting • Achieved the highest click-through rate (CTR) and 200k+ total views by creating an innovative series of YouTube videos to promote products through the angle of soap operas",
-    hashtags: "#ContentMarketing #GrowthCampaigns #EventExecution",
-    icon: "smartphone"
+    hashtags: ["ContentMarketing", "GrowthCampaigns", "EventExecution"],
+    icon: "mitte"
   }
 ];
 
@@ -52,26 +60,31 @@ const Experience = () => {
         <div className="space-y-12">
           {experiences.map((exp, index) => (
             <article key={index} className="border-l-2 border-divider pl-6 relative hover-scale animate-fade-in" style={{animationDelay: `${index * 200}ms`}}>
-              <div className="absolute w-8 h-8 bg-background border-2 border-divider rounded-full -left-5 top-1 flex items-center justify-center">
+              <div className="absolute w-8 h-8 bg-background border-2 border-divider rounded-full -left-5 top-1 flex items-center justify-center overflow-hidden">
                 {exp.icon === "hua-nan" && (
                   <img 
                     src="/lovable-uploads/037f1a73-49ba-433f-96a5-47c0a76032f1.png" 
                     alt="Hua Nan Securities" 
-                    className="w-5 h-5 object-contain"
+                    className="w-8 h-8 object-cover"
                   />
                 )}
                 {exp.icon === "uber-eats" && (
                   <img 
                     src="/lovable-uploads/ea7ca73e-3988-4dc8-ae63-ade9d9d37f39.png" 
                     alt="Uber Eats" 
-                    className="w-5 h-5 object-contain"
+                    className="w-8 h-8 object-cover"
                   />
                 )}
-                {exp.icon === "smartphone" && (
+                {exp.icon === "eastern-union" && (
+                  <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                    <span className="text-xs font-bold text-white">EU</span>
+                  </div>
+                )}
+                {exp.icon === "mitte" && (
                   <img 
                     src="/lovable-uploads/0d94bb8c-5159-45d0-81a2-b34889d3b1a0.png" 
                     alt="Mitte 3C" 
-                    className="w-5 h-5 object-contain"
+                    className="w-8 h-8 object-cover"
                   />
                 )}
               </div>
@@ -88,22 +101,25 @@ const Experience = () => {
                     </span>
                   )}
                 </h3>
-                <time className="text-sm text-muted-foreground font-medium">
+                <time className="text-sm text-muted-foreground font-medium mb-2 block">
                   {exp.period}
                 </time>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {exp.hashtags.map((tag, tagIdx) => (
+                    <Badge key={tagIdx} variant="secondary" className="text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
               </div>
               
-              <ul className="prose-editorial text-base leading-relaxed space-y-2 list-disc list-inside mb-4">
+              <ul className="prose-editorial text-base leading-relaxed space-y-2 list-disc list-inside">
                 {exp.description.split('•').filter(point => point.trim()).map((point, idx) => (
                   <li key={idx} className="text-muted-foreground">
                     {point.trim()}
                   </li>
                 ))}
               </ul>
-              
-              <div className="text-sm text-accent font-medium">
-                {exp.hashtags}
-              </div>
             </article>
           ))}
         </div>
