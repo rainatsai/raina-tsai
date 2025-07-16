@@ -37,7 +37,7 @@ const Experience = () => {
       </div>
       
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-20">
         <div className="absolute top-10 left-10 w-20 h-20 border border-primary rounded-full animate-pulse"></div>
         <div className="absolute top-40 right-20 w-16 h-16 border border-accent rounded-full animate-pulse delay-1000"></div>
         <div className="absolute bottom-20 left-1/4 w-12 h-12 border border-primary rounded-full animate-pulse delay-2000"></div>
