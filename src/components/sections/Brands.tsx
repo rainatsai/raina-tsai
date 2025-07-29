@@ -1,14 +1,17 @@
 import { Heart, Users, TrendingUp, Star } from 'lucide-react';
 
-const brands = [
+const fintechBrands = [
   {
     name: "Eastern Union Future",
     tagline: "Vice President of Sales",
     description: "• Co-founded a fintech subsidiary under Eastern Union Interactive, focused on AI and data tools for investors • Led product strategy for a global equity & ETF research platform, integrating financials, holdings, and ETF data • Partnered with S&P Global to license and localize data for securities with bilingual display • Positioned product as a 'Bloomberg for retail,' solving fragmented data and language barriers",
     metrics: ["S&P Global Partnership", "Global Platform", "Bilingual Display", "AI & Data Tools"],
-    icon: TrendingUp,
+    logo: "/lovable-uploads/8bcc854f-1329-4921-8d0c-fe3f64c4224f.png",
     gradient: "from-emerald-500/20 to-teal-500/20"
-  },
+  }
+];
+
+const communityBrands = [
   {
     name: "Lovesick Rehab",
     tagline: "Brand & Community",
@@ -44,34 +47,41 @@ const Brands = () => {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-display text-4xl font-bold text-primary-text mb-4">
+          <h2 className="font-display text-4xl font-bold text-primary-text mb-4 text-center">
             Company & Brands I've Built
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center">
             From community building to fintech innovation, I've created platforms that connect people and drive meaningful engagement.
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-          {brands.map((brand, index) => {
-            const IconComponent = brand.icon;
-            return (
+        {/* Fintech Innovation Section */}
+        <div className="mb-16">
+          <h3 className="font-display text-2xl font-bold text-primary-text mb-8 text-center">
+            Fintech Innovation - Eastern Union Future
+          </h3>
+          <div className="flex justify-center">
+            {fintechBrands.map((brand, index) => (
               <div 
                 key={index} 
-                className={`relative p-8 rounded-2xl bg-gradient-to-br ${brand.gradient} backdrop-blur-sm border border-white/10 hover-scale animate-fade-in group`}
+                className={`relative p-8 rounded-2xl bg-gradient-to-br ${brand.gradient} backdrop-blur-sm border border-white/10 hover-scale animate-fade-in group max-w-md`}
                 style={{animationDelay: `${index * 300}ms`}}
               >
-                {/* Floating Icon */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-background border-2 border-divider rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-6 h-6 text-accent" />
+                {/* Logo */}
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-background border-2 border-divider rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                  <img 
+                    src={brand.logo} 
+                    alt={brand.name} 
+                    className="w-8 h-8 object-contain"
+                  />
                 </div>
 
                 <div className="mb-6">
-                  <h3 className="font-display text-2xl font-bold text-primary-text mb-2 whitespace-nowrap">
+                  <h4 className="font-display text-2xl font-bold text-primary-text mb-2">
                     {brand.name}
-                  </h3>
+                  </h4>
                   <div className="mb-3">
                     <span className="text-accent font-medium">{brand.tagline}</span>
                   </div>
@@ -98,8 +108,62 @@ const Brands = () => {
                   ))}
                 </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
+        </div>
+
+        {/* Community Building Section */}
+        <div>
+          <h3 className="font-display text-2xl font-bold text-primary-text mb-8 text-center">
+            Community Building - Lovesick Rehab, The Mingle Studio
+          </h3>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {communityBrands.map((brand, index) => {
+              const IconComponent = brand.icon;
+              return (
+                <div 
+                  key={index} 
+                  className={`relative p-8 rounded-2xl bg-gradient-to-br ${brand.gradient} backdrop-blur-sm border border-white/10 hover-scale animate-fade-in group`}
+                  style={{animationDelay: `${(index + 1) * 300}ms`}}
+                >
+                  {/* Floating Icon */}
+                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-background border-2 border-divider rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="w-6 h-6 text-accent" />
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-display text-2xl font-bold text-primary-text mb-2">
+                      {brand.name}
+                    </h4>
+                    <div className="mb-3">
+                      <span className="text-accent font-medium">{brand.tagline}</span>
+                    </div>
+                  </div>
+
+                  <ul className="text-primary-text mb-6 leading-relaxed space-y-2 list-disc list-inside">
+                    {brand.description.split('•').filter(point => point.trim()).map((point, idx) => (
+                      <li key={idx} className="text-muted-foreground">
+                        {point.trim()}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Metrics */}
+                  <div className="grid grid-cols-1 gap-3">
+                    {brand.metrics.map((metric, metricIndex) => (
+                      <div 
+                        key={metricIndex}
+                        className="flex items-center gap-2 p-3 rounded-lg bg-background/30 backdrop-blur-sm border border-white/10"
+                      >
+                        <Star className="w-4 h-4 text-accent flex-shrink-0" />
+                        <span className="text-sm font-medium text-primary-text">{metric}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
