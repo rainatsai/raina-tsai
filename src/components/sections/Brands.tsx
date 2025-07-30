@@ -60,7 +60,7 @@ const Brands = () => {
         {/* Fintech Innovation Section */}
         <div className="mb-16">
           <h3 className="font-display text-2xl font-bold text-primary-text mb-8 text-center">
-            Fintech Innovation - Eastern Union Future
+            Fintech Innovation 
           </h3>
           <div className="flex justify-center">
             {fintechBrands.map((brand, index) => (
@@ -115,7 +115,7 @@ const Brands = () => {
         {/* Community Building Section */}
         <div>
           <h3 className="font-display text-2xl font-bold text-primary-text mb-8 text-center">
-            Community Building - Lovesick Rehab, The Mingle Studio
+            Community Building 
           </h3>
           <div className="grid lg:grid-cols-2 gap-8">
             {communityBrands.map((brand, index) => {
