@@ -1,4 +1,4 @@
-import { Heart, Users, TrendingUp, Star } from 'lucide-react';
+import { Heart, Users, TrendingUp, Star, Award, Target, Zap } from 'lucide-react';
 
 const fintechBrands = [
   {
@@ -87,13 +87,27 @@ const Brands = () => {
                   </div>
                 </div>
 
-                <ul className="text-primary-text mb-6 leading-relaxed space-y-2 list-disc list-inside">
-                  {brand.description.split('•').filter(point => point.trim()).map((point, idx) => (
-                    <li key={idx} className="text-muted-foreground">
-                      {point.trim()}
-                    </li>
-                  ))}
-                </ul>
+                <div className="space-y-3 mb-6">
+                  {brand.description.split('•').filter(point => point.trim()).map((point, idx) => {
+                    const text = point.trim();
+                    const isHighlight = /(\d+%|\d+\+|Bloomberg|S&P Global|Partnership|bilingual|AI)/i.test(text);
+                    
+                    return (
+                      <div key={idx} className={`flex items-start gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-white/5 ${
+                        isHighlight ? 'bg-accent/20 border-l-4 border-accent' : 'bg-white/5'
+                      }`}>
+                        <div className="mt-1 flex-shrink-0">
+                          {isHighlight ? <Zap className="w-4 h-4 text-accent" /> : <Target className="w-4 h-4 text-muted-foreground" />}
+                        </div>
+                        <span className={`text-sm leading-relaxed ${
+                          isHighlight ? 'text-primary-text font-medium' : 'text-muted-foreground'
+                        }`}>
+                          {text}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
 
                 {/* Metrics */}
                 <div className="grid grid-cols-1 gap-3">
@@ -140,13 +154,27 @@ const Brands = () => {
                     </div>
                   </div>
 
-                  <ul className="text-primary-text mb-6 leading-relaxed space-y-2 list-disc list-inside">
-                    {brand.description.split('•').filter(point => point.trim()).map((point, idx) => (
-                      <li key={idx} className="text-muted-foreground">
-                        {point.trim()}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="space-y-3 mb-6">
+                    {brand.description.split('•').filter(point => point.trim()).map((point, idx) => {
+                      const text = point.trim();
+                      const isHighlight = /(\d+,\d+|\d+%|\d+\+|over|100|50|20|300|grew|attracted|reducing)/i.test(text);
+                      
+                      return (
+                        <div key={idx} className={`flex items-start gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-white/5 ${
+                          isHighlight ? 'bg-accent/20 border-l-4 border-accent' : 'bg-white/5'
+                        }`}>
+                          <div className="mt-1 flex-shrink-0">
+                            {isHighlight ? <Award className="w-4 h-4 text-accent" /> : <Target className="w-4 h-4 text-muted-foreground" />}
+                          </div>
+                          <span className={`text-sm leading-relaxed ${
+                            isHighlight ? 'text-primary-text font-medium' : 'text-muted-foreground'
+                          }`}>
+                            {text}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
 
                   {/* Metrics */}
                   <div className="grid grid-cols-1 gap-3">

@@ -1,4 +1,5 @@
 import { Badge } from '@/components/ui/badge';
+import { TrendingUp, Award, Target } from 'lucide-react';
 
 const experiences = [
   {
@@ -101,13 +102,33 @@ const Experience = () => {
                 </div>
               </div>
               
-              <ul className="prose-editorial text-base leading-relaxed space-y-2 list-disc list-inside">
-                {exp.description.split('•').filter(point => point.trim()).map((point, idx) => (
-                  <li key={idx} className="text-muted-foreground">
-                    {point.trim()}
-                  </li>
-                ))}
-              </ul>
+              <div className="space-y-3">
+                {exp.description.split('•').filter(point => point.trim()).map((point, idx) => {
+                  const text = point.trim();
+                  // Highlight key achievements with different icons and styles
+                  const isHighAchievement = /(\d+%|\d+\+|highest|record|million|achieved|accomplished)/i.test(text);
+                  const isProcess = /(managed|conducted|utilized|performed)/i.test(text);
+                  
+                  return (
+                    <div key={idx} className={`flex items-start gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-accent/5 ${
+                      isHighAchievement ? 'bg-accent/10 border-l-4 border-accent' : 
+                      isProcess ? 'bg-primary/5 border-l-2 border-primary/30' : 
+                      'bg-muted/30'
+                    }`}>
+                      <div className="mt-1 flex-shrink-0">
+                        {isHighAchievement && <Award className="w-4 h-4 text-accent" />}
+                        {isProcess && !isHighAchievement && <Target className="w-4 h-4 text-primary" />}
+                        {!isHighAchievement && !isProcess && <TrendingUp className="w-4 h-4 text-muted-foreground" />}
+                      </div>
+                      <span className={`text-sm leading-relaxed ${
+                        isHighAchievement ? 'text-primary-text font-medium' : 'text-muted-foreground'
+                      }`}>
+                        {text}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
             </article>
           ))}
         </div>
