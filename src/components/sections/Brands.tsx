@@ -4,7 +4,7 @@ const fintechBrands = [
   {
     name: "Eastern Union Future",
     tagline: "Vice President of Sales",
-    description: "• Co-founded a fintech subsidiary under Eastern Union Interactive, focused on AI and data tools for investors • Led product strategy for a global equity & ETF research platform, integrating financials, holdings, and ETF data • Partnered with S&P Global to license and localize data for securities with bilingual display • Positioned product as a 'Bloomberg for retail,' solving fragmented data and language barriers",
+    description: "• **Co-founded** a **fintech subsidiary** under Eastern Union Interactive, focused on **AI and data tools** for investors • Led **product strategy** for a **global equity & ETF research platform**, integrating financials, holdings, and ETF data • **Partnered with S&P Global** to license and localize data for securities with **bilingual display** • Positioned product as a **'Bloomberg for retail,'** solving fragmented data and language barriers",
     metrics: ["S&P Global Partnership", "Global Platform", "Bilingual Display", "AI & Data Tools"],
     logo: "/lovable-uploads/8bcc854f-1329-4921-8d0c-fe3f64c4224f.png",
     gradient: "from-emerald-500/20 to-teal-500/20"
@@ -15,7 +15,7 @@ const communityBrands = [
   {
     name: "Lovesick Rehab",
     tagline: "Brand & Community",
-    description: "• Established and operated a Facebook group of over 100,000 people, a fan account of 50,000 people, and an Instagram account of over 20,000 people • The number of members of the group grew by 2% every month • Cooperated with Internet celebrities to increase exposure and endorse products (such as Instagram celebrity @bigtan___bibi, EBC News Channel, dating apps, etc.)",
+    description: "• **Established and operated** a **Facebook group of over 100,000 people**, a **fan account of 50,000 people**, and an **Instagram account of over 20,000 people** • The number of members of the group grew by **2% every month** • Cooperated with **Internet celebrities** to increase exposure and endorse products (such as Instagram celebrity **@bigtan___bibi**, **EBC News Channel**, dating apps, etc.)",
     metrics: ["100k+ Facebook Group", "50k+ Fan Page", "20k+ Instagram", "2% Monthly Growth"],
     icon: Heart,
     gradient: "from-pink-500/20 to-red-500/20"
@@ -23,7 +23,7 @@ const communityBrands = [
   {
     name: "The Mingle Studio", 
     tagline: "Career Community Platform",
-    description: "• Founded a community to guide fresh graduates on career planning and studying abroad • Designed 4 events with 20+ speakers, attracting 300+ participants • Coordinated with Fu Jen Catholic University to sponsor the event 'The Mingle Studio Back to FJU,' and attracted 80+ participants • Negotiated with 5+ vendors to arrange event supplies details including venue selection and F&B supplies, reducing total costs by 20%",
+    description: "• **Founded a community** to guide **fresh graduates** on **career planning and studying abroad** • Designed **4 events** with **20+ speakers**, attracting **300+ participants** • Coordinated with **Fu Jen Catholic University** to sponsor the event **'The Mingle Studio Back to FJU,'** and attracted **80+ participants** • Negotiated with **5+ vendors** to arrange event supplies details including venue selection and F&B supplies, reducing total costs by **20%**",
     metrics: ["300+ Event Participants", "20+ Expert Speakers", "4 Major Events", "20% Cost Reduction"],
     icon: Users,
     gradient: "from-blue-500/20 to-purple-500/20"
@@ -89,8 +89,9 @@ const Brands = () => {
 
                 <ul className="text-primary-text mb-6 leading-relaxed space-y-2 list-disc list-inside">
                   {brand.description.split('•').filter(point => point.trim()).map((point, idx) => (
-                    <li key={idx} className="text-muted-foreground">
-                      {point.trim()}
+                    <li key={idx} className="text-muted-foreground" dangerouslySetInnerHTML={{
+                      __html: point.trim().replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    }}>
                     </li>
                   ))}
                 </ul>
@@ -142,8 +143,9 @@ const Brands = () => {
 
                   <ul className="text-primary-text mb-6 leading-relaxed space-y-2 list-disc list-inside">
                     {brand.description.split('•').filter(point => point.trim()).map((point, idx) => (
-                      <li key={idx} className="text-muted-foreground">
-                        {point.trim()}
+                      <li key={idx} className="text-muted-foreground" dangerouslySetInnerHTML={{
+                        __html: point.trim().replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                      }}>
                       </li>
                     ))}
                   </ul>
