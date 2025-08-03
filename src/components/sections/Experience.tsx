@@ -6,7 +6,7 @@ const experiences = [
     title: "Project and Product Manager",
     department: "Global Investment",
     period: "May 2024 - present",
-    description: "• Conducted **in-depth research** and authored reports on **U.S. stocks, ETFs, and bonds**, providing strategic market insights and investment outlooks for HNCB and other institutions • Managed **product development** for the in-house **'e指沖' sub-brokerage app**, overseeing **end-to-end project management** to enhance user experience and expand product offerings • Performed **requirements analysis**, **system planning**, specification drafting and confirmation, **test case creation**, **functional testing**, test report writing, **go-live validation**, preparation of go-live documentation and training slides, branch training, and acted as the contact point for **regulatory inspections and audits**",
+    description: "• Conducted in-depth research and authored reports on U.S. stocks, ETFs, and bonds, providing strategic market insights and investment outlooks for HNCB and other institutions • Managed product development for the in-house 'e指沖' sub-brokerage app, overseeing end-to-end project management to enhance user experience and expand product offerings • Performed requirements analysis, system planning, specification drafting and confirmation, test case creation, functional testing, test report writing, go-live validation, preparation of go-live documentation and training slides, branch training, and acted as the contact point for regulatory inspections and audits",
     hashtags: ["FintechProduct", "CapitalMarkets", "FullCycleDevelopment"],
     icon: "hua-nan"
   },
@@ -14,7 +14,7 @@ const experiences = [
     company: "Uber Eats",
     title: "PayFac AML Intern", 
     period: "Jul 2022 - Aug 2022",
-    description: "• Promoted **PayFac (third-party payment)** verification project by reaching out to **3,000+ restaurants** and stores, and achieved the highest completion rate of **90%** • Maintain an **80% retention rate** by collaborating with **cross-function colleagues** in organizing customer lists and reports, classifying customer lists, and confirming the restaurant remittance, billing, and other matters • Utilized internal **customer relationship management systems (CRM)** such as **G-Suite, Salesforce, and SAP** to handle **500+ restaurant information**",
+    description: "• Promoted PayFac (third-party payment) verification project by reaching out to 3,000+ restaurants and stores, and achieved the highest completion rate of 90% • Maintain an 80% retention rate by collaborating with cross-function colleagues in organizing customer lists and reports, classifying customer lists, and confirming the restaurant remittance, billing, and other matters • Utilized internal customer relationship management systems (CRM) such as G-Suite, Salesforce, and SAP to handle 500+ restaurant information",
     hashtags: ["ComplianceOps", "CRMExperience", "OperationalExcellence"],
     icon: "uber-eats"
   },
@@ -22,7 +22,7 @@ const experiences = [
     company: "Mitte 3C",
     title: "Marketing Assistant",
     period: "Feb 2019 - Oct 2019", 
-    description: "• Increased the average growth rate of the target audience by nearly **100%** by identifying **customer preferences** and managing the **Facebook fan page, Instagram account, and YouTube** • Accomplished a record of **one million turnovers** by hosting **4+ marketing events** including Halloween and Mother's Day from conception to execution and developing **creative copywriting** • Achieved the **highest click-through rate (CTR)** and **200k+ total views** by creating an innovative series of **YouTube videos** to promote products through the angle of **soap operas**",
+    description: "• Increased the average growth rate of the target audience by nearly 100% by identifying customer preferences and managing the Facebook fan page, Instagram account, and YouTube • Accomplished a record of one million turnovers by hosting 4+ marketing events including Halloween and Mother's Day from conception to execution and developing creative copywriting • Achieved the highest click-through rate (CTR) and 200k+ total views by creating an innovative series of YouTube videos to promote products through the angle of soap operas",
     hashtags: ["ContentMarketing", "GrowthCampaigns", "EventExecution"],
     icon: "mitte"
   }
@@ -103,9 +103,8 @@ const Experience = () => {
               
               <ul className="prose-editorial text-base leading-relaxed space-y-2 list-disc list-inside">
                 {exp.description.split('•').filter(point => point.trim()).map((point, idx) => (
-                  <li key={idx} className="text-muted-foreground" dangerouslySetInnerHTML={{
-                    __html: point.trim().replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                  }}>
+                  <li key={idx} className="text-muted-foreground">
+                    {point.trim()}
                   </li>
                 ))}
               </ul>
